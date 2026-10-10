@@ -1,0 +1,22 @@
+---
+- name: Install Clickhouse
+  hosts: clickhouse
+  roles:
+    - clickhouse
+
+- name: Install Vector
+  hosts: vector
+  become: true
+  roles:
+    - vector-role
+
+- name: Install Lighthouse
+  hosts: lighthouse
+  become: true
+  roles:
+    - lighthouse-role
+  tasks:
+    - name: Check Lighthouse HTTP port
+      ansible.builtin.wait_for:
+        port: 80
+        timeout: 30

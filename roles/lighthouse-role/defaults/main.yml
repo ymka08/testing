@@ -1,0 +1,5 @@
+---
+lighthouse_archive_url: https://github.com/VKCOM/lighthouse/archive/refs/heads/master.tar.gz
+lighthouse_document_root: /var/www/lighthouse
+lighthouse_config_path: /etc/nginx/sites-available/lighthouse.conf
+lighthouse_port: 80

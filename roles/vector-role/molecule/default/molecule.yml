@@ -1,0 +1,22 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: oraclelinux
+    image: oraclelinux:8
+    pre_build_image: true
+    command: /sbin/init
+    privileged: true
+
+  - name: ubuntu
+    image: ubuntu:latest
+    pre_build_image: true
+    command: sleep infinity
+    privileged: true
+
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
